@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1387046007 source:/home/arzar/Code/RangeFun/main.cpp
+	<boost/range.hpp>
+	<boost/range/adaptor/transformed.hpp>
+	<boost/range/algorithm/copy.hpp>
+	<iterator>
+	<boost/iterator/iterator_categories.hpp>
+	<boost/algorithm/string/join.hpp>
+	"range_ext.hpp"
+
+1387046082 /home/arzar/Code/RangeFun/range_ext.hpp
+	"chunkby.hpp"
+	"day.hpp"
+	<boost/config.hpp>
+	<boost/range/begin.hpp>
+	<boost/range/empty.hpp>
+	<boost/range/reference.hpp>
+	<boost/range/value_type.hpp>
+	<boost/type_traits/remove_reference.hpp>
+	<boost/assert.hpp>
+	<boost/optional.hpp>
+
+1387045315 /home/arzar/Code/RangeFun/chunkby.hpp
+	"day.hpp"
+
+1387044779 /home/arzar/Code/RangeFun/day.hpp
+	<iterator>
+	<boost/date_time/gregorian/gregorian.hpp>
+	<boost/iterator/iterator_facade.hpp>
+	<boost/range/adaptor/argument_fwd.hpp>
+	<boost/range/iterator_range.hpp>
+

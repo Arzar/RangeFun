@@ -106,7 +106,7 @@ namespace boost
 		template <typename Range, typename Predicate>
 		chunkby_range<typename Range::iterator, Predicate> doChunkBy(const Range& r, Predicate p)
 		{
-			return chunkby_range<Range::iterator, Predicate>(r.begin(), r.end());
+			return chunkby_range<typename Range::iterator, Predicate>(r.begin(), r.end());
 		}
 
 		template< class T >

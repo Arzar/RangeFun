@@ -1,5 +1,5 @@
 #include <boost/range.hpp>
-#include <boost/range/access/front.hpp>
+//#include <boost/range/access/front.hpp>
 #include <boost/range/adaptor/transformed.hpp>
 #include <boost/range/algorithm/copy.hpp>
 #include <iterator>
@@ -14,7 +14,7 @@ using namespace boost::adaptors;
 using namespace boost::range::access;
 using namespace boost::range;
 
-char* monthNames [] = { "January", "February", "March", "April", "May", "June",
+const char* monthNames [] = { "January", "February", "March", "April", "May", "June",
 "July", "August", "September", "October", "November", "December" };
 
 /// The number of columns per day in the formatted output.
@@ -23,7 +23,7 @@ int ColsPerDay = 3;
 /// The number of columns per week in the formatted output.
 int ColsPerWeek = 7 * ColsPerDay;
 
-std::string spaces(size_t n) 
+std::string spaces(size_t n)
 {
 	return std::string(n, ' ');
 }
@@ -96,18 +96,18 @@ struct formatMonth
 	std::string operator()(day_range monthDay) const
 	{
 		std::stringstream ss;
-		greg::date first_day_of_month = monthDay | front;
-		
+		greg::date first_day_of_month = monthDay | boost::range::access::front;
+
 		ss << monthTitle(first_day_of_month.month()) << std::endl;
 
 		ss << (monthDay | byweek | transformed(formatWeek()) | join("\n"));
-		
-		ss << std::endl; 
+
+		ss << std::endl;
 		return ss.str();
 	}
 };
 
-void main()
+int main()
 {
 	try
 	{
